@@ -12,7 +12,7 @@ test("CLS + redis without shim = sadness", function (t) {
   var client = redis.createClient();
 
   this.tearDown(function () {
-    client.end();
+    client.end(true);
   });
 
   function fetch(key, done) {
@@ -68,7 +68,7 @@ test("CLS + redis with shim = satisfaction", function (t) {
   var client = redis.createClient();
 
   this.tearDown(function () {
-    client.end();
+    client.end(true);
   });
 
   function fetch(key, done) {
